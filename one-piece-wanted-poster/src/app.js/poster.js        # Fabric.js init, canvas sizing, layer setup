@@ -1,0 +1,35 @@
+const canvas = new fabric.Canvas('posterCanvas', {
+    width: 320,
+    height: 480,
+    preserveObjectStacking: true
+});
+
+// Set up the user photo layer
+const userPhoto = new fabric.Image.fromURL('path/to/user/photo.jpg', function(img) {
+    img.set({
+        left: 0,
+        top: 0,
+        scaleX: 320 / img.width,
+        scaleY: 480 / img.height,
+        selectable: false
+    });
+    canvas.add(img);
+});
+
+// Set up the poster frame layer
+fabric.Image.fromURL('path/to/poster/frame.png', function(frame) {
+    frame.set({
+        left: 0,
+        top: 0,
+        selectable: false
+    });
+    canvas.add(frame);
+});
+
+// Ensure the canvas is clipped to the poster area
+canvas.clipTo = function(ctx) {
+    ctx.rect(0, 0, 320, 480);
+};
+
+// Bring the frame to the top
+canvas.bringToFront(frame);

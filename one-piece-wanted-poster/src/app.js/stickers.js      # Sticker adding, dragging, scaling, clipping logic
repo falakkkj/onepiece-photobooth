@@ -1,0 +1,58 @@
+const canvas = new fabric.Canvas('posterCanvas');
+const posterContainer = document.getElementById('posterContainer');
+const posterWidth = 320;
+const posterHeight = 480;
+
+// Function to add a sticker to the canvas
+function addSticker(url) {
+    fabric.Image.fromURL(url, function(img) {
+        img.set({
+            left: 50,
+            top: 50,
+            scaleX: 0.5,
+            scaleY: 0.5,
+            selectable: true,
+            hasControls: true,
+            hasBorders: true,
+        });
+
+        // Ensure the sticker is clipped within the poster area
+        img.clipTo = function(ctx) {
+            ctx.rect(0, 0, posterWidth, posterHeight);
+        };
+
+        canvas.add(img);
+        canvas.renderAll();
+    });
+}
+
+// Make stickers draggable and scalable
+canvas.on('object:moving', function(e) {
+    const obj = e.target;
+    if (obj) {
+        // Limit movement within the poster area
+        obj.set({
+            left: Math.max(0, Math.min(obj.left, posterWidth - obj.width * obj.scaleX)),
+            top: Math.max(0, Math.min(obj.top, posterHeight - obj.height * obj.scaleY))
+        });
+    }
+});
+
+canvas.on('object:scaling', function(e) {
+    const obj = e.target;
+    if (obj) {
+        // Limit scaling to ensure the sticker stays within the poster area
+        const scaleX = obj.scaleX;
+        const scaleY = obj.scaleY;
+
+        if (obj.left + obj.width * scaleX > posterWidth) {
+            obj.scaleX = (posterWidth - obj.left) / obj.width;
+        }
+        if (obj.top + obj.height * scaleY > posterHeight) {
+            obj.scaleY = (posterHeight - obj.top) / obj.height;
+        }
+    }
+});
+
+// Export functions for external use
+export { addSticker };
