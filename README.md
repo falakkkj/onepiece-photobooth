@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🏴‍☠️ One Piece Photobooth 📸
 
-## Getting Started
+A fun and interactive One Piece–themed photobooth web application that lets users capture photos using a camera and decorate them with One Piece–inspired stickers ⚓📸
+🏴‍☠️ Built with love for the Grand Line — a small tribute from a One Piece fan like me.
 
-First, run the development server:
+✨ Features
 
-```bash
+📸 Live camera access for capturing photos
+🏴‍☠️ One Piece–themed stickers to decorate photos
+🎨 Simple and clean user interface
+⚡ Fast and lightweight performance
+🌐 Deployed and accessible online
+
+🛠️ Tech Stack
+
+Frontend: HTML, CSS, JavaScript
+Tooling: Vite
+Version Control: Git & GitHub
+Deployment: GitHub Pages / Netlify / Vercel
+
+🚀 Live Demo
+
+👉 Live Project: https://onepiece-photobooth-app.vercel.app
+
+📂 Project Structure
+onepiece-photobooth/
+│
+├── public/
+│   └── stickers/          # One Piece stickers
+│
+├── src/
+│   ├── components/
+│   ├── styles/
+│   └── main.js
+│
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+
+⚙️ Installation & Setup
+
+Clone the repository:
+git clone https://github.com/your-username/onepiece-photobooth.git
+
+
+Navigate to the project directory:
+cd onepiece-photobooth
+
+Install dependencies:
+npm install
+
+Run the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🎯 Purpose of the Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Learn camera access in web applications
+Practice frontend development
+Build a creative anime-themed project
+Showcase skills in portfolio & interviews
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔮 Future Enhancements
 
-## Learn More
+💾 Download/save edited photos
+🖼️ Add more One Piece stickers
+📱 Improve mobile responsiveness
+✨ Add filters and effects
 
-To learn more about Next.js, take a look at the following resources:
+👩‍💻 Author
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Falak Jain
+B.Tech (Artificial Intelligence & Machine Learning)
+Frontend Developer | AIML Enthusiast
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📜 License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is for educational and personal use only.
+All One Piece characters, names, and stickers belong to their respective owners.
